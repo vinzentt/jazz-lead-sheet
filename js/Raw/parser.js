@@ -1,7 +1,12 @@
 define(function(require, exports){
 
 	var _parseChord = function(chordTxt, chord, measure){
-		measure[chord] = {};
+		measure[chord] = {
+			raw:chordTxt,
+			parenthesis: false,
+			root: '',
+			color: ''
+		};
 		measure[chord].raw = chordTxt;
 		if (chordTxt.indexOf('(') !== -1)
 		{

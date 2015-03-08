@@ -12,18 +12,23 @@
 	font-family: "RealbookRegular";
 }
 .lead-sheet{
-	margin:0 auto;
+	font-family: "RealbookRegular";
+	float:right;
 	position:relative;
+	font-size:20px;
+	width:80%;
 }
 .lead-sheet.no-symbols {
 	border: 3px solid black;
 }
 /** Generic classes **/
 .cell{
-	position:absolute;
+	display: inline-block;
 	border:1px solid black;
 	text-align:center;
 	background-color: #ffffff;
+	height: 90px;
+  	width: 110px;
     z-index:100;
 }
 .two-chords{
