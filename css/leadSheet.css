@@ -12,19 +12,26 @@
 	font-family: "RealbookRegular";
 }
 .lead-sheet{
-	font-family: "RealbookRegular";
-	float:right;
-	position:relative;
-	font-size:20px;
-	width:80%;
+    font-family: "RealbookRegular";
+	font-size:30px;
+    line-height: 40px;
+    margin:0 auto;
+    width:auto;
+}
+.lsheetRow{
+    display:inline-table;
 }
 .lead-sheet.no-symbols {
 	border: 3px solid black;
 }
+#main-wrapper{
+    margin-top:30px;
+}
 /** Generic classes **/
 .cell{
-	display: inline-block;
+	display: inline-table;
 	border:1px solid black;
+    float:left;
 	text-align:center;
 	background-color: #ffffff;
 	height: 90px;

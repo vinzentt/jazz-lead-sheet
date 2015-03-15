@@ -8,21 +8,25 @@ define(function(require, exports){
 			color: ''
 		};
 		measure[chord].raw = chordTxt;
-		if (chordTxt.indexOf('(') !== -1)
-		{
-			measure[chord].parenthesis = true;
-			chordTxt = chordTxt.replace(/\((.*?)\)/i, '$1');
-		}
-		//extract bass if needed
-        if (chordTxt.split('/').length === 2){
-        	measure[chord].bass = chordTxt.split('/')[1];
-        	chordTxt = chordTxt.split('/')[0];
-        } 
-        if (chordTxt.split('_').length === 2){
-        	measure[chord].root = chordTxt.split('_')[0];
-        	measure[chord].color = chordTxt.split('_')[1];
+        if (chordTxt === "%") {
+            measure[chord].root = chordTxt;
         } else {
-        	measure[chord].root = chordTxt;
+    		if (chordTxt.indexOf('(') !== -1)
+    		{
+    			measure[chord].parenthesis = true;
+    			chordTxt = chordTxt.replace(/\((.*?)\)/i, '$1');
+    		}
+    		//extract bass if needed
+            if (chordTxt.split('/').length === 2){
+            	measure[chord].bass = chordTxt.split('/')[1];
+            	chordTxt = chordTxt.split('/')[0];
+            } 
+            if (chordTxt.split('_').length === 2){
+            	measure[chord].root = chordTxt.split('_')[0];
+            	measure[chord].color = chordTxt.split('_')[1];
+            } else {
+            	measure[chord].root = chordTxt;
+            }
         }
 	};
 
@@ -32,9 +36,9 @@ define(function(require, exports){
 			parsedArr[line] = lineTxt.split('|');
 			parsedArr[line].forEach(function(measureTxt, measure){
 				parsedArr[line][measure] = measureTxt.split(' ');
-				parsedArr[line][measure].forEach(_parseChord)
+				parsedArr[line][measure].forEach(_parseChord);
 			});
 		});
 		return parsedArr;
 	};
-})
+});
