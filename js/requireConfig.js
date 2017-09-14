@@ -2,9 +2,9 @@ requirejs.config({
     baseUrl:'js',
     paths : {
         //require plugins
-        text: '../bower_components/text/text',
-        jquery: '../bower_components/jquery/dist/jquery',
-        underscore: '../bower_components/underscore/underscore',
+        // text: '../node_modules/text/text',
+        jquery: '../node_modules/jquery/dist/jquery',
+        underscore: '../node_modules/underscore/underscore',
         'raw/parser': 'Raw/parser',
         'measure/renderer': 'Measure/Renderer',
         'renderer': 'Renderer',
@@ -15,5 +15,5 @@ requirejs.config({
           exports: '_'
         }
     },
-    deps: ['text', 'underscore']
+    deps: ['underscore']
 });

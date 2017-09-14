@@ -1,10 +1,9 @@
-define(['underscore', 'Font', '$lsheet', 'Measure/Renderer', 'text!config/scales.json'], function(_, font, $lsheet, measureRenderer, scalesTxt){
+define(['underscore', 'Font', '$lsheet', 'Measure/Renderer', 'config/scales'], function(_, font, $lsheet, measureRenderer, scalesConfig){
 	
-	var scales = JSON.parse(scalesTxt);
 	var self = {};
 
 	function Renderer(key) {
-		self.scale = scales[key];
+		self.scale = scalesConfig.scales[key];
 
 		var _prepareChord = function(chord){
 			if (chord.root !== '%') {
